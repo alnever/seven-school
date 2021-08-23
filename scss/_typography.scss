@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+$header-font: 'Open Sans', sans-serif;
+$text-font: 'Roboto', sans-serif;
+
+$h1-text-size: 4rem;
+$h2-text-size: 3.5rem;
+$h3-text-size: 3rem;
+$h4-text-size: 2.5rem;
+$h5-text-size: 2rem;
+$h6-text-size: 1.5rem;
+$regular-text: 1rem;
+
+.header-text {
+    font-family: $header-font;
+    color: $header-light;
+}
+
+h1 {
+    @extend .header-text;
+    font-size: $h1-text-size;
+}
+
+h2 {
+    @extend .header-text;
+    font-size: $h2-text-size;
+}
+
+h3 {
+    @extend .header-text;
+    font-size: $h3-text-size;
+}
+
+h4 {
+    @extend .header-text;
+    font-size: $h4-text-size;
+}
+
+h5 {
+    @extend .header-text;
+    font-size: $h5-text-size;
+}
+
+h6 {
+    @extend .header-text;
+    font-size: $h6-text-size;
+}
+
+p, a, li, td {
+    font-family: $header-font;
+    font-size: $regular-text;
+}
