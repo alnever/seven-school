@@ -1,0 +1,45 @@
+.container {
+  width: $container-width;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    align-items: center;
+
+    & > .title {
+      font-family: $header-font;
+    }
+
+    & > .text {
+      font-family: $text-font;
+    }
+
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .sidebar {
+      width: 15%;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .posts {
+      width: 75%;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+}

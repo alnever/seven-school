@@ -1,0 +1,17 @@
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+body {
+  margin: 0;
+  background-color: $white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

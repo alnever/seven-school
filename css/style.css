@@ -1,5 +1,52 @@
+/* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
-.header-text, h1, h2, h3, h4, h5, h6 {
+/* color */
+/* container */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word; }
+
+body {
+  margin: 0;
+  background-color: #ffffff; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.container {
+  width: 1376px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; }
+  .container .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    align-items: center; }
+    .container .header > .title {
+      font-family: "Open Sans", sans-serif; }
+    .container .header > .text {
+      font-family: "Roboto", sans-serif; }
+  .container .content {
+    width: 100%;
+    display: flex;
+    flex-direction: row; }
+    .container .content .sidebar {
+      width: 15%;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column; }
+    .container .content .posts {
+      width: 75%;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column; }
+
+.header-text-style, h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
   color: #1059a1; }
 
