@@ -68,7 +68,7 @@ function seven_school_enqueue_styles_scripts() {
 	wp_enqueue_style('seven-school-style-all', get_theme_file_uri('/css/style.css'), ['seven-school-style'], wp_get_theme()->get('Version') );
 
 //     wp_enqueue_script('seven_school-jquery', get_theme_file_uri('/js/jquery-3.3.1.js'), [], null, true );
-// 	wp_enqueue_script('seven_school-script', get_theme_file_uri('/js/index.js'), ['swtk-jquery'], wp_get_theme()->get('Version'), true );
+    wp_enqueue_script('seven_school-script', get_theme_file_uri('/js/navigation.js'), null, wp_get_theme()->get('Version'), true );
 //
 // 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 // 		wp_enqueue_script( 'comment-reply' );
@@ -76,4 +76,27 @@ function seven_school_enqueue_styles_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'seven_school_enqueue_styles_scripts');
+
+
+function seven_school_register_widget_areas() {
+  register_sidebar([
+    'name' => __('Header Toolbar Widgets','seven-school'),
+    'id' => 'header-toolbar-widgets',
+  ]);
+
+}
+
+add_action('widgets_init', 'seven_school_register_widget_areas');
+
+
+function seven_school_register_menus() {
+  register_nav_menus(
+    [
+        'primary' => __('Primary Menu', 'seven-school'),
+        'secondary' => __('Secondary Menu', 'seven-school'),
+    ]
+  );
+}
+
+add_action('init','seven_school_register_menus');
 ?>

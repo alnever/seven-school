@@ -11,6 +11,7 @@ var commonjs = require('rollup-plugin-commonjs');
 
 
 var sassSource = './scss/style.scss';
+var sassSourceWatch = './scss';
 var sassEditor = './scss/editor-style.scss';
 var cssDest = './css';
 var cssEditorDest = './theme';
@@ -48,7 +49,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('watch', function(){
-	gulp.watch(sassSource, gulp.series('styles'));
+	gulp.watch(sassSourceWatch, gulp.series('styles'));
 	gulp.watch(jsSource, gulp.series('scripts'));
 	gulp.watch(sassEditor, gulp.series('editor'));
 });

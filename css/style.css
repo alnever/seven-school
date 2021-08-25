@@ -21,16 +21,18 @@ img {
   margin: 0 auto;
   display: flex;
   flex-direction: column; }
+  .container .header-toolbar {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
   .container .header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 3rem;
+    padding: 10rem;
     align-items: center; }
-    .container .header > .title {
-      font-family: "Open Sans", sans-serif; }
-    .container .header > .text {
-      font-family: "Roboto", sans-serif; }
   .container .content {
     width: 100%;
     display: flex;
@@ -46,7 +48,7 @@ img {
       display: flex;
       flex-direction: column; }
 
-.header-text-style, h1, h2, h3, h4, h5, h6 {
+.header-text-style, h1, h2, h3, h4, .header > .text, h5, h6, .header-toolbar-brand a {
   font-family: "Open Sans", sans-serif;
   color: #1059a1; }
 
@@ -59,15 +61,119 @@ h2 {
 h3 {
   font-size: 3rem; }
 
-h4 {
+h4, .header > .text {
   font-size: 2.5rem; }
 
 h5 {
   font-size: 2rem; }
 
-h6 {
+h6, .header-toolbar-brand a {
   font-size: 1.5rem; }
 
 p, a, li, td {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem; }
+
+.header {
+  background-image: linear-gradient(0deg, #646464, rgba(100, 100, 100, 0)), url(../img/school-1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; }
+  .header > .title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 7rem;
+    color: #ffffff;
+    text-align: center;
+    font-variant: all-small-caps; }
+  .header > .text {
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-variant: all-small-caps; }
+
+.header-toolbar-brand a {
+  font-family: "Open Sans", sans-serif;
+  color: #224970;
+  text-decoration: none;
+  font-variant: all-small-caps; }
+  .header-toolbar-brand a:hover {
+    color: #224970;
+    text-decoration: none;
+    text-shadow: #cecece 1px 1px; }
+
+.header-menu {
+  background: #555555; }
+  .header-menu ul {
+    margin: 0 30px;
+    position: relative;
+    z-index: 9990; }
+  .header-menu a {
+    color: white;
+    padding: 10px;
+    position: relative; }
+  .header-menu li {
+    background: #555555; }
+    .header-menu li:hover {
+      background: #626262; }
+  .header-menu ul > .current_page_item,
+  .header-menu ul > .current-menu-item,
+  .header-menu ul > .current-post-ancestor,
+  .header-menu ul > .current-menu-ancestor,
+  .header-menu ul > .current-menu-parent,
+  .header-menu ul > .current-post-parent {
+    background: #1059a1; }
+    .header-menu ul > .current_page_item:hover,
+    .header-menu ul > .current-menu-item:hover,
+    .header-menu ul > .current-post-ancestor:hover,
+    .header-menu ul > .current-menu-ancestor:hover,
+    .header-menu ul > .current-menu-parent:hover,
+    .header-menu ul > .current-post-parent:hover {
+      background: #1266b8; }
+    .header-menu ul > .current_page_item:hover a:after,
+    .header-menu ul > .current-menu-item:hover a:after,
+    .header-menu ul > .current-post-ancestor:hover a:after,
+    .header-menu ul > .current-menu-ancestor:hover a:after,
+    .header-menu ul > .current-menu-parent:hover a:after,
+    .header-menu ul > .current-post-parent:hover a:after {
+      border-top-color: #1266b8; }
+  .header-menu ul > .current_page_item ~ .current_page_item a,
+  .header-menu ul > .current-menu-item ~ .current-menu-item a,
+  .header-menu ul > .current-post-ancestor ~ .current-post-ancestor a,
+  .header-menu ul > .current-menu-parent ~ .current-menu-parent a,
+  .header-menu ul > .current-post-parent ~ .current-post-parent a {
+    background: #555555; }
+    .header-menu ul > .current_page_item ~ .current_page_item a:hover,
+    .header-menu ul > .current-menu-item ~ .current-menu-item a:hover,
+    .header-menu ul > .current-post-ancestor ~ .current-post-ancestor a:hover,
+    .header-menu ul > .current-menu-parent ~ .current-menu-parent a:hover,
+    .header-menu ul > .current-post-parent ~ .current-post-parent a:hover {
+      background: #626262; }
+  .header-menu ul > .current_page_item a:after,
+  .header-menu ul > .current-menu-item a:after,
+  .header-menu ul > .current-post-ancestor a:after,
+  .header-menu ul > .current-menu-parent a:after,
+  .header-menu ul > .current-post-parent a:after {
+    content: '';
+    font-size: 0px;
+    line-height: 0%;
+    width: 0px;
+    border-top: 6px solid #1059a1;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    z-index: 9995; }
+  .header-menu ul > .current_page_item ~ .current_page_item a:after,
+  .header-menu ul > .current-menu-item ~ .current-menu-item a:after,
+  .header-menu ul > .current-post-ancestor ~ .current-post-ancestor a:after,
+  .header-menu ul > .current-menu-parent ~ .current-menu-parent a:after,
+  .header-menu ul > .current-post-parent ~ .current-post-parent a:after,
+  .header-menu ul ul li a:after {
+    content: '';
+    border: none !important; }
+  .header-menu ul ul {
+    margin: 0;
+    top: 40px;
+    z-index: 9990; }

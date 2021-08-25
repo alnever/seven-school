@@ -1,3 +1,4 @@
+
 .container {
   width: $container-width;
   margin: 0 auto;
@@ -5,21 +6,28 @@
   display: flex;
   flex-direction: column;
 
+  .header-toolbar {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 3rem;
+    padding: 10rem;
     align-items: center;
 
-    & > .title {
-      font-family: $header-font;
-    }
+  }
 
-    & > .text {
-      font-family: $text-font;
-    }
-
+  .header-menu {
+    //width: 100%;
+    //display: flex;
+    //flex-direction: row;
+    //flex-wrap: wrap;
   }
 
   .content {
