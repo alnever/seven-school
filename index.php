@@ -34,7 +34,7 @@
             ?>
 
                 <?php if ($query->have_posts()): ?>
-                    <div class="posts">
+                    <div class="posts-feed">
 
                           <?php while($query->have_posts()): $query->the_post(); ?>
                             <article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -51,7 +51,7 @@
                                 </div>
 
                                 <?php if (has_category()): ?>
-                                    <div class="swtk-post-categories">
+                                    <div class="post-categories">
                                         <img src="<?php echo get_theme_file_uri('/icons/category.svg'); ?>" class="swtk-icon">
                                         <?php the_category(); ?>
                                     </div>
@@ -66,8 +66,6 @@
                           </div>
                     </div>
                 <?php endif; ?>
-        </div>
-        <div class="sidebar">
         </div>
         <div class="sidebar">
         </div>

@@ -34,7 +34,20 @@ h6 {
     font-size: $h6-text-size;
 }
 
-p, a, li, td {
-    font-family: $header-font;
+p, li, td {
+
     font-size: $regular-text;
+}
+
+a {
+    font-family: $text-font;
+    font-size: $regular-text;
+
+    color: $header-light;
+    text-decoration: none;
+
+    &:hover {
+        color: $header-color;
+        text-decoration: dotted;
+    }
 }

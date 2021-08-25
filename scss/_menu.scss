@@ -1,77 +1,97 @@
+@mixin popup-menu($z-index) {
+  width: 300px;
+  flex-direction: column;
+  position: absolute;
+  margin: 0.5rem 2rem;
+  z-index: $z-index;
+  background: $bg-dark;
+  box-shadow: 3px 3px $shadow-dark;
+}
+
 .header-menu {
   background: $bg-dark;
+  position: relative;
 
-  ul {
-    margin: 0 30px;
-    position: relative;
-    z-index: 9990;
-  }
+  .menu {
 
-  a {
-    color: white;
-    padding: 10px;
-    position: relative;
-  }
-
-  li {
-    background: $bg-dark;
-    &:hover { background: lighten($bg-dark, 5%); }
-  }
-
-  ul > .current_page_item,
-  ul > .current-menu-item,
-  ul > .current-post-ancestor,
-  ul > .current-menu-ancestor,
-  ul > .current-menu-parent,
-  ul > .current-post-parent {
-    background: $header-light;
-    &:hover { background: lighten($header-light, 5%); }
-    &:hover a:after {
-      border-top-color: lighten($header-light, 5%);
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
-  }
 
-  ul > .current_page_item ~ .current_page_item a,
-  ul > .current-menu-item ~ .current-menu-item a,
-  ul > .current-post-ancestor ~ .current-post-ancestor a,
-  ul > .current-menu-parent ~ .current-menu-parent a,
-  ul > .current-post-parent ~ .current-post-parent a {
-    background: $bg-dark;
-    &:hover { background: lighten($bg-dark, 5%); }
-  }
+    & > ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      list-style-type: none;
 
-  ul > .current_page_item a:after,
-  ul > .current-menu-item a:after,
-  ul > .current-post-ancestor a:after,
-  ul > .current-menu-parent a:after,
-  ul > .current-post-parent a:after {
-    content: '';
-    font-size: 0px; line-height: 0%; width: 0px;
-    border-top: 6px solid $header-light;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
+      & > li {
+        padding: 0.5em;
+        background-color: $bg-dark;
 
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    margin-left: -6px;
-    z-index: 9995;
-  }
+        & > ul.children {
+          display: none;
+          @include popup-menu(100);
 
-  ul > .current_page_item ~ .current_page_item a:after,
-  ul > .current-menu-item ~ .current-menu-item a:after,
-  ul > .current-post-ancestor ~ .current-post-ancestor a:after,
-  ul > .current-menu-parent ~ .current-menu-parent a:after,
-  ul > .current-post-parent ~ .current-post-parent a:after,
-  ul ul li a:after {
-    content: '';
-    border: none !important;
-  }
 
-  ul ul {
-    margin: 0;
-    top: 40px;
-    z-index: 9990;
+          & > li {
+            padding: 0.5em;
+            background-color: $bg-dark;
+            text-wrap: normal;
+            position: relative;
+
+            & > ul.children {
+              display: none;
+              left: 100%;
+              top: 0;
+              width: 300px;
+              flex-direction: column;
+              position: absolute;
+              z-index: 200;
+              background: $bg-dark;
+              box-shadow: 3px 3px $shadow-dark;
+
+              & > li {
+                padding: 0.5em;
+                background-color: $bg-dark;
+                text-wrap: normal;
+
+                &:hover {
+                  background-color: $bg-blue;
+                }
+              }
+            }
+
+            &:hover {
+              background-color: $bg-blue;
+
+              & > ul.children {
+                display: flex;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $bg-blue;
+
+          & > ul.children {
+            display: flex;
+
+          }
+        }
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
 }

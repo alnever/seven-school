@@ -1,0 +1,30 @@
+.post {
+  display: flex;
+  flex-direction: column;
+
+  &-title {
+    @extend h5;
+  }
+
+  &-date {
+    @extend p;
+    font-size: x-small;
+    color: $header-light;
+  }
+
+  &-content {
+    @extend p;
+  }
+
+  &-categories {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    & > * {
+      margin-right: 0.5rem;
+    }
+
+
+  }
+}
