@@ -47,6 +47,22 @@
       padding: 0.5rem;
       display: flex;
       flex-direction: column;
+
+      &-sticky {
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      &-feed {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > .post {
+          width: 50%;
+        }
+      }
     }
 
   }

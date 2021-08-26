@@ -47,8 +47,17 @@ img {
       padding: 0.5rem;
       display: flex;
       flex-direction: column; }
+      .container .content .posts-sticky {
+        display: flex;
+        flex-direction: column; }
+      .container .content .posts-feed {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        .container .content .posts-feed > .post {
+          width: 50%; }
 
-.header-text-style, h1, h2, h3, h4, .header > .text, h5, .post-title, h6, .header-toolbar-brand a {
+.header-text-style, h1, h2, h3, h4, .header > .text, h5, h6, .header-toolbar-brand a, .post-title {
   font-family: "Open Sans", sans-serif;
   color: #1059a1; }
 
@@ -64,13 +73,14 @@ h3 {
 h4, .header > .text {
   font-size: 2.5rem; }
 
-h5, .post-title {
+h5 {
   font-size: 2rem; }
 
-h6, .header-toolbar-brand a {
+h6, .header-toolbar-brand a, .post-title {
   font-size: 1.5rem; }
 
 p, .post-date, .post-content, li, td {
+  font-family: "Roboto", sans-serif;
   font-size: 1rem; }
 
 a {

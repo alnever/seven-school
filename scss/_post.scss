@@ -3,7 +3,7 @@
   flex-direction: column;
 
   &-title {
-    @extend h5;
+    @extend h6;
   }
 
   &-date {
@@ -14,6 +14,8 @@
 
   &-content {
     @extend p;
+
+
   }
 
   &-categories {
@@ -24,7 +26,7 @@
     & > * {
       margin-right: 0.5rem;
     }
-
-
   }
 }
+
+
